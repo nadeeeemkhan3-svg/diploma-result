@@ -1,8 +1,7 @@
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>RGPV Diploma Result </title>
+<title> Diploma Result</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -11,207 +10,186 @@ body{
     font-family: Arial, sans-serif;
     background:#f2f4f8;
 }
-
-/* HEADER */
 .header{
-    background:#FF0000;
+    background:#0b3c7a;
     padding:10px;
-    display:flex;
-    align-items:center;
+    color:#fff;
 }
-.logo{
-    width:45px;
-    height:45px;
-    background:#ddd;
-    border-radius:50%;
+.header h2{
+    margin:0;
+    font-size:16px;
     text-align:center;
-    line-height:45px;
-    font-weight:bold;
-    margin-right:10px;
+}
+.container{
+    max-width:900px;
+    margin:20px auto;
+    background:#fff;
+    border:1px solid #dcdcdc;
+}
+.breadcrumb{
+    padding:10px;
+    font-size:14px;
+    color:#555;
 }
 .title{
-    font-size:14px;
-    font-weight:bold;
-}
-.login-btns{
-    margin-left:auto;
-}
-.login-btns button{
-    background:#f5b335;
-    border:1px solid #c98b1e;
-    color:#7a1b;
-    padding:5px 8px;
-    font-size:12px;
-    border-radius:4px;
-}
-
-/* NAV */
-.nav{
-    background:#1f3c88;
-    color:#fff;
     padding:10px;
-    font-size:14px;
+    font-size:18px;
+    border-bottom:1px solid #ddd;
 }
-
-/* BOX */
-.box{
-    background:#fff;
-    margin:10px;
+.search-box{
     padding:15px;
-    border-radius:6px;
+    border-bottom:1px solid #ddd;
 }
-
-/* INPUT */
-input,select,button{
-    width:100%;
-    padding:10px;
-    margin-top:8px;
-    font-size:14px;
+.search-box input, select{
+    padding:5px;
 }
-button{
-    background:#1f3c88;
-    color:#FF0000;
+.search-box button{
+    padding:6px 12px;
+    background:#000;
+    color:#fff;
     border:none;
-    border-radius:4px;
+    cursor:pointer;
 }
-
-/* RESULT HEADER */
-.result-head{
-    background:#1f3c88;
-    color:#FF0000;
-    padding:10px;
+.university{
+    background:#0b3c7a;
+    color:#fff;
+    padding:15px;
     text-align:center;
-    margin-top:10px;
-    font-size:13px;
 }
-
-/* TABLE */
+.university h3{
+    margin:5px 0;
+    font-size:18px;
+}
+.details{
+    padding:15px;
+    text-align:center;
+}
+.details p{
+    margin:6px 0;
+}
 table{
     width:100%;
     border-collapse:collapse;
     margin-top:10px;
 }
-th,td{
-    border:1px solid #ccc;
-    padding:6px;
-    font-size:12px;
+th, td{
+    border:1px solid #ddd;
+    padding:8px;
     text-align:center;
 }
 th{
-    background:#f2f2f2;
+    background:#f5f5f5;
 }
-
-.footer{
-    background:#1f3c88;
-    color:#fff;
-    padding:10px;
-    font-size:12px;
+.summary{
+    padding:15px;
+    display:flex;
+    justify-content:space-around;
+    font-weight:bold;
+}
+.result{
+    padding:15px;
     text-align:center;
+    font-size:18px;
+}
+.result span{
+    color:green;
+    font-weight:bold;
+}
+.footer{
+    background:#0b3c7a;
+    color:#fff;
+    padding:20px;
     margin-top:20px;
 }
-
-.hidden{display:none;}
+.demo{
+    text-align:center;
+    color:red;
+    font-weight:bold;
+    margin:15px 0;
+}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
-    <div class="logo">RGPV</div>
-    <div class="title">
-        DIPLOMA WING<br>
-        Rajiv Gandhi Proudyogiki Vishwavidyalaya
+    <h2>DIPLOMA WING</h2>
+</div>
+
+<div class="container">
+
+    <div class="breadcrumb">Home / Inner Page</div>
+
+    <div class="title">Result : Diploma Pharmacy</div>
+
+    <div class="search-box">
+        Roll No. 
+        <input type="text" value="23223P02012" readonly>
+        Semester/Year 
+        <select disabled>
+            <option>2</option>
+        </select>
+        <button>Reset</button>
     </div>
-</div>
 
-<div class="nav">☰ Home</div>
-
-<!-- LOGIN PAGE -->
-<div class="box" id="loginPage">
-    <h3>Student Login</h3>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-</div>
-
-<!-- DASHBOARD -->
-<div class="box hidden" id="dashboard">
-    <h3>Student Dashboard</h3>
-    <button onclick="openResult()">View Result</button>
-    <button onclick="logout()">Logout</button>
-</div>
-
-<!-- RESULT PAGE -->
-<div class="box hidden" id="resultPage">
-    <h3>Result : Diploma Pharmacy</h3>
-    <input type="text" id="rollno" placeholder="Enter Roll No">
-    <select>
-        <option>Semester 2</option>
-    </select>
-    <button onclick="getResult()">Get Result</button>
-
-    <div id="resultData" class="hidden">
-        <div class="result-head">
-            RAJIV GANDHI PROUDYOGIKI VISHWAVIDYALAYA<br>
-            POLYTECHNIC WING, BHOPAL
-        </div>
-
-        <p><strong>Name:</strong> NADEEM KHAN GOURI</p>
-        <p><strong>Roll No:</strong> <span id="rno"></span></p>
-        <p><strong>Course:</strong> DIPLOMA PHARMACY (2 YEAR)</p>
-        <p><strong>Status:</strong> Regular</p>
-
-        <table>
-            <tr>
-                <th>201</th><th>202</th><th>203</th><th>204</th><th>205</th><th>206</th>
-            </tr>
-            <tr>
-                <td>32+19</td><td>40+19</td><td>32+19</td>
-                <td>28+19</td><td>27+19</td><td>24+19</td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <th>Grand Total</th>
-                <th>Result</th>
-            </tr>
-            <tr>
-                <td>739</td>
-                <td>PASS</td>
-            </tr>
-        </table>
+    <div class="university">
+        <h3>RAJIV GANDHI PROUDYOGIKI VISHWAVIDYALAYA</h3>
+        <p>POLYTECHNIC WING (Demo)</p>
+        <p>Airport Bypass Road, Bhopal, Madhya Pradesh</p>
     </div>
+
+    <div class="details">
+        <p><b>Stream:</b> DIPLOMA PHARMACY (2 YEAR)</p>
+        <p><b>Name:</b> NADEEM KHAN GOURI</p>
+        <p><b>Roll No:</b> 23223P02012</p>
+        <p><b>Branch:</b> P02</p>
+        <p><b>Semester/Term:</b> 2</p>
+        <p><b>Status:</b> Regular</p>
+    </div>
+
+    <table>
+        <tr>
+            <th>SUBJECT</th>
+            <th>201</th>
+            <th>202</th>
+            <th>203</th>
+            <th>204</th>
+            <th>205</th>
+            <th>206</th>
+        </tr>
+        <tr>
+            <th>MARKS</th>
+            <td>32 + 19</td>
+            <td>40 + 19</td>
+            <td>32 + 19</td>
+            <td>28 + 19</td>
+            <td>27 + 19</td>
+            <td>24 + 19</td>
+        </tr>
+    </table>
+
+    <div class="summary">
+        <div>Th Total<br>183</div>
+        <div>Tw Total<br>114</div>
+        <div>Pr Total<br>349</div>
+        <div>Lw Total<br>93</div>
+        <div>Pw Total<br>0</div>
+        <div>Gnd Total<br>739</div>
+    </div>
+
+    <div class="result">
+        Result : <span>PASS</span>
+    </div>
+
+    <div class="">
+        ***  RESULT – FOR PRACTICE / TEST PURPOSE ONLY ***
+    </div>
+
 </div>
 
 <div class="footer">
-    RGPV Diploma Result Website<br>
-    For learning & testing only
+    <p>About Us | Vision | Campus Information</p>
 </div>
-
-<script>
-function login(){
-    document.getElementById("loginPage").classList.add("hidden");
-    document.getElementById("dashboard").classList.remove("hidden");
-}
-function logout(){
-    location.reload();
-}
-function openResult(){
-    document.getElementById("dashboard").classList.add("hidden");
-    document.getElementById("resultPage").classList.remove("hidden");
-}
-function getResult(){
-    let roll = document.getElementById("rollno").value;
-    if(roll==="23223P02012"){
-        document.getElementById("rno").innerText = roll;
-        document.getElementById("resultData").classList.remove("hidden");
-    }else{
-        alert("Result not found (Demo)");
-    }
-}
-</script>
 
 </body>
 </html>
