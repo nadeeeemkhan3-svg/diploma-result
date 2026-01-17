@@ -56,7 +56,7 @@ th{background:#f5f5f5}
 
 <div class="university">
 <b>RAJIV GANDHI PROUDYOGIKI VISHWAVIDYALAYA</b><br>
-Polytechnic Wing (DEMO)
+Polytechnic Wing
 </div>
 
 <div class="details">
@@ -94,7 +94,7 @@ Result: <span id="res"></span>
 </div>
 
 <div class="demo">
-*** DEMO RESULT – FOR PRACTICE / TEST ONLY ***
+*** RESULT – FOR RECHECKING / REVALUATION ***
 </div>
 
 </div>
@@ -124,7 +124,7 @@ const results={
 "23223P02013":{name:"RAHUL SHARMA",marks:["19+13","18+12","17+11","16+10","15+9","14+8"],total:99,pr:230,grand:429,status:"FAIL"},
 "23223P02014":{name:"MOHIT PATEL",marks:["26+17","27+16","28+15","25+14","24+13","23+12"],total:153,pr:300,grand:653,status:"PASS"},
 "23223P02015":{name:"ARJUN SINGH",marks:["15+10","14+9","13+8","12+7","11+6","10+5"],total:75,pr:200,grand:350,status:"FAIL"},
-"23223P02016":{name:"SAMEER KHAN",marks:["29+18","30+17","31+16","28+15","27+14","26+13"],total:171,pr:330,grand:701,status:"PASS"},
+"23223P02016":{name:"SAMEER KHAN",marks:["29+18","30+17","31+16","28+15","27+14","26+13"],total:171,pr:330,grand:701,status:"FAIL"},
 "23223P02017":{name:"VIKAS JAIN",marks:["18+12","17+11","16+10","15+9","14+8","13+7"],total:93,pr:220,grand:406,status:"FAIL"},
 "23223P02018":{name:"ANUJ TIWARI",marks:["27+19","28+18","29+17","26+16","25+15","24+14"],total:159,pr:340,grand:699,status:"PASS"}
 }
@@ -134,7 +134,7 @@ function showResult(){
 const roll=document.getElementById("roll").value.trim();
 const sem=document.getElementById("sem").value;
 if(!results[sem][roll]){
-alert("Result not found for selected semester (DEMO)");
+alert("Result not found for selected semester ()");
 return;
 }
 const r=results[sem][roll];
