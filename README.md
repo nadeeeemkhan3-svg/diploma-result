@@ -14,7 +14,7 @@ body{
 
 /* HEADER */
 .header{
-    background:#fff;
+    background:#FF0000;
     padding:10px;
     display:flex;
     align-items:center;
@@ -70,7 +70,7 @@ input,select,button{
 }
 button{
     background:#1f3c88;
-    color:#fff;
+    color:#FF0000;
     border:none;
     border-radius:4px;
 }
@@ -78,7 +78,7 @@ button{
 /* RESULT HEADER */
 .result-head{
     background:#1f3c88;
-    color:#fff;
+    color:#FF0000;
     padding:10px;
     text-align:center;
     margin-top:10px;
