@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>RGPV Diploma Result Demo</title>
+<title>RGPV Diploma Result </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -39,7 +39,7 @@ body{
 .login-btns button{
     background:#f5b335;
     border:1px solid #c98b1e;
-    color:#7a1b1b;
+    color:#7a1b;
     padding:5px 8px;
     font-size:12px;
     border-radius:4px;
@@ -186,7 +186,7 @@ th{
 </div>
 
 <div class="footer">
-    Demo RGPV Diploma Result Website<br>
+    RGPV Diploma Result Website<br>
     For learning & testing only
 </div>
 
