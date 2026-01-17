@@ -6,108 +6,112 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background:#f2f4f8;
+body{
     margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#e9eef5;
 }
-.header {
-    background:#0b3c91;
+.top-bar{
+    background:#003366;
+    padding:10px;
     color:#fff;
-    padding:15px;
     text-align:center;
+    font-weight:bold;
 }
-.container {
-    max-width:800px;
+.nav{
+    background:#0b3c91;
+    padding:8px;
+    color:white;
+    text-align:right;
+    font-size:14px;
+}
+.container{
+    max-width:900px;
     margin:20px auto;
     background:#fff;
     padding:20px;
-    box-shadow:0 0 10px rgba(0,0,0,0.15);
+    box-shadow:0 0 8px rgba(0,0,0,0.2);
 }
-.login-box {
+.login-box{
+    border:1px solid #ccc;
+    padding:15px;
     text-align:center;
 }
-input, select {
-    width:260px;
-    padding:10px;
+input, select{
+    padding:8px;
+    width:250px;
     margin:8px;
 }
-button {
-    padding:10px 25px;
+button{
+    padding:8px 20px;
     background:#0b3c91;
     color:#fff;
     border:none;
     cursor:pointer;
 }
-table {
+.result-box{
+    display:none;
+    margin-top:20px;
+}
+table{
     width:100%;
     border-collapse:collapse;
-    margin-top:15px;
+    margin-top:10px;
 }
-table, th, td {
+th, td{
     border:1px solid #000;
-}
-th, td {
     padding:8px;
     text-align:center;
 }
-.result-box {
-    display:none;
-}
-.pass {
+.pass{
     color:green;
     font-weight:bold;
 }
-.fail {
-    color:red;
-    font-weight:bold;
-}
-.footer {
-    background:#0b3c91;
-    color:#fff;
+.footer{
+    background:#003366;
+    color:white;
     text-align:center;
     padding:10px;
     margin-top:20px;
 }
-@media print {
-    button { display:none; }
+@media print{
+    button{display:none;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-    <h2>RAJIV GANDHI PROUDYOGIKI VISHWAVIDYALAYA</h2>
-    <p>Diploma Wing – Madhya Pradesh</p>
+<div class="top-bar">
+RAJIV GANDHI PROUDYOGIKI VISHWAVIDYALAYA, BHOPAL
+</div>
+
+<div class="nav">
+Diploma Wing Result Portal
 </div>
 
 <div class="container">
 
+<h3>Result : Diploma Pharmacy</h3>
+
 <div class="login-box">
-    <h3>Result : Diploma Pharmacy</h3>
-    <input type="text" id="roll" placeholder="Enter Enrollment Number"><br>
-    <select id="sem">
-        <option value="2">Semester / Year 2</option>
-    </select><br>
-    <button onclick="showResult()">View Result</button>
-    <p id="error" style="color:red;"></p>
+<input type="text" id="roll" placeholder="Enter Enrollment Number"><br>
+<select>
+<option>Semester / Year 2</option>
+</select><br>
+<button onclick="checkResult()">View Result</button>
+<p id="error" style="color:red;"></p>
 </div>
 
 <div class="result-box" id="result">
 
-<hr>
-
 <p><b>Name:</b> NADEEM KHAN GOURI</p>
 <p><b>Roll No:</b> 23223P02012</p>
-<p><b>Branch:</b> Diploma Pharmacy (2 Year)</p>
+<p><b>Course:</b> Diploma Pharmacy (2 Year)</p>
 <p><b>Status:</b> Regular</p>
 
 <table>
-<tr>
-    <th>Subject</th>
-    <th>Marks</th>
-</tr>
+<tr><th>Subject</th><th>Marks</th></tr>
 <tr><td>201</td><td>32 + 19</td></tr>
 <tr><td>202</td><td>40 + 19</td></tr>
 <tr><td>203</td><td>32 + 19</td></tr>
@@ -117,7 +121,7 @@ th, td {
 </table>
 
 <p><b>Grand Total:</b> 739</p>
-<p class="pass">Result: PASS</p>
+<p class="pass">RESULT : PASS</p>
 
 <button onclick="window.print()">Print / Save PDF</button>
 
@@ -126,18 +130,18 @@ th, td {
 </div>
 
 <div class="footer">
-    © RGPV Diploma Wing (Demo Result Page)
+© RGPV Diploma Wing (Demo Result Page)
 </div>
 
 <script>
-function showResult() {
+function checkResult(){
     let roll = document.getElementById("roll").value;
-    if (roll === "23223P02012") {
-        document.getElementById("result").style.display = "block";
-        document.getElementById("error").innerHTML = "";
-    } else {
-        document.getElementById("result").style.display = "none";
-        document.getElementById("error").innerHTML = "Invalid Enrollment Number";
+    if(roll === "23223P02012"){
+        document.getElementById("result").style.display="block";
+        document.getElementById("error").innerHTML="";
+    }else{
+        document.getElementById("result").style.display="none";
+        document.getElementById("error").innerHTML="Invalid Enrollment Number";
     }
 }
 </script>
